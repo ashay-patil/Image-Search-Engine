@@ -5,11 +5,11 @@ const form = document.getElementById("search-form");
 const showmore = document.getElementById("show-more-btn");
 let input = "";
 let page = 1;
-const API = "https://api.unsplash.com/search/photos?";
+const API = "https://api.unsplash.com/search/photos";
 const client_id = ".....Enter Your Access Id Here .....";
 let searchImage = async () => {
     input = searchbox.value;
-    const url = API + `page=${page}&query=${input}&client_id=${client_id}`;
+    const url = API + `?page=${page}&query=${input}&client_id=${client_id}`;
     let response = await fetch(url);
     let data = await response.json();
     console.log(data.results);
